@@ -1,19 +1,12 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+  #app
+    b-navbar(toggleable='lg' type='dark' variant='info')
+      b-container
+        b-navbar-brand(to='/') 番茄鐘
+        b-navbar-toggle(target='nav-collapse')
+        b-collapse#nav-collapse(is-nav)
+          b-navbar-nav
+            b-nav-item(to="/list" active-class="active") 待辦
+            b-nav-item(to="/settings" active-class="active") 設定
+    router-view
 </template>
-
-<style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
-</style>
