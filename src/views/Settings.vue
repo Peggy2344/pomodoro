@@ -55,7 +55,4 @@ export default {
 </script>
 
 <style scoped>
-.table td{
-  vertical-align: center;
-}
 </style>
