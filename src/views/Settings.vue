@@ -7,6 +7,7 @@
             template(#cell(file)="data")
               audio(controls :src="'./sounds/'+data.item.file")
             template(#cell(select)="data")
+              font-awesome-icon(v-if="data.item.file === alarm" :icon="['fas', 'check']")
 </template>
 
 <script>
@@ -48,8 +49,13 @@ export default {
   methods: {
     selectAlarm (item) {
       this.$store.commit('selectAlarm', item.file)
-      console.log(item)
     }
   }
 }
 </script>
+
+<style scoped>
+.table td{
+  vertical-align: center;
+}
+</style>
